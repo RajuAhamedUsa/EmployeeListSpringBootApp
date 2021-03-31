@@ -1,0 +1,25 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Update Employee</title>
+</head>
+<body>
+<div class="container">
+    <h2>Update Employee</h2>
+    <form action="#" th:action="@{/saveEmployee}" method="post" th:object="${employee}">
+        <!--used to handle update , it does not create duplicate entity -->
+        <input type="hidden" th:field="*{id}">
+
+        <input type="text" th:field="*{empFirstName}" class="form-control mb-4 col-2">
+        <input type="text" th:field="*{empLastName}" class="form-control mb-4 col-2" >
+        <input type="text" th:field="*{empEmail}" class="form-control mb-4 col-2" >
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
